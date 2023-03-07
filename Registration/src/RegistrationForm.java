@@ -168,7 +168,7 @@ public class RegistrationForm extends JFrame {
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					String query = "insert into registration values(?,?,?,?,?,?,?,?)";
 					PreparedStatement pstd = con.prepareStatement(query);
 					pstd.setString(1,  tfName.getText());
