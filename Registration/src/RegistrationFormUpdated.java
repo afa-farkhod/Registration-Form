@@ -64,7 +64,7 @@ public class RegistrationForm extends JFrame {
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users","root","2207");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users","root","");
 			String query = "select * from registration";
 			PreparedStatement pstd = con.prepareStatement(query);
 			ResultSet rst = pstd.executeQuery();
@@ -198,7 +198,7 @@ public class RegistrationForm extends JFrame {
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					String query = "insert into registration values(?,?,?,?,?,?,?,?)";
 					PreparedStatement pstd = con.prepareStatement(query);
 					pstd.setString(1,  tfName.getText());
@@ -287,7 +287,7 @@ public class RegistrationForm extends JFrame {
 					
 					
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					String query = "select * from registration where name='"+name_+"' ";
 					PreparedStatement pstd = con.prepareStatement(query);
 					ResultSet rstd = pstd.executeQuery();
@@ -323,7 +323,7 @@ public class RegistrationForm extends JFrame {
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					Statement stmt = con.createStatement();
 					String query = "select * from registration";
 					ResultSet rs = stmt.executeQuery(query);
@@ -375,7 +375,7 @@ public class RegistrationForm extends JFrame {
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					String query = "delete from registration where name='"+tfName.getText()+"'  ";
 					PreparedStatement pstd = con.prepareStatement(query);
 					pstd.executeUpdate();
@@ -400,7 +400,7 @@ public class RegistrationForm extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					String query = "update registration set name='"+tfName.getText()+"' , address='"+tfAddress.getText()+"' , age='"+tfAge.getText()+"'  , mobile='"+tfMobileNo.getText()+"' , email='"+tfEmail.getText()+"' ,username='"+tfUserName.getText()+"' ,password='"+tfPassword.getText();
 					PreparedStatement pstd = con.prepareStatement(query);
 					pstd.executeUpdate();
@@ -428,7 +428,7 @@ public class RegistrationForm extends JFrame {
 					
 
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "2207");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "root", "");
 					String query = "select * from registration where name=? ";
 					PreparedStatement pstd = con.prepareStatement(query);
 					pstd.setString(1, (String) comboBoxName.getSelectedItem());
